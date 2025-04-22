@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>TTDPT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Chương trình Quiz</h1>
+
+  <div id="menu">
+    <h2>Chọn Chủ đề và Phần</h2>
+    <select id="topicSelect">
+      <option value="">-- Chọn Chủ đề --</option>
+    </select>
+
+    <select id="partSelect" disabled>
+      <option value="">-- Chọn Phần --</option>
+    </select>
+
+    <button onclick="startQuiz()">Bắt đầu</button>
+    <button id="previewAnswersBtn" disabled onclick="previewAnswers()">👁 Xem trước đáp án</button>
+  </div>
+
+  <div id="quizContainer" style="display:none;">
+    <div id="questionIndex" style="font-weight: bold; margin-bottom: 10px;"></div>
+    <div id="questionBox"></div>
+    <div id="optionsBox"></div>
+    <div style="margin-top: 10px;">
+      <button onclick="prevQuestion()">⬅️ Câu trước</button>
+      <button onclick="nextQuestion()">➡️ Câu tiếp theo</button>
+      <button onclick="submitQuiz()">📝 Nộp bài</button>
+      <button onclick="backToMenu()">🔙 Trang chủ</button>
+    </div>
+  </div>
+  
+  <div id="resultContainer" style="display: none;">
+    <div id="scoreDisplay"></div>
+    <div id="reviewContainer"></div>
+    <button id="reviewBtn" onclick="reviewAnswers()">🔁 Xem lại đáp án</button>
+    <button onclick="backToMenu()">🔙 Quay lại trang đầu</button>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
